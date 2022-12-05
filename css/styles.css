@@ -1,0 +1,163 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --font: 'Inter', sans-serif;
+    --text-color: rgb(255, 236, 211);
+    --bg-color: #121214;
+    --bg-color-img: linear-gradient(90deg, #160057 0%, #5200bd 50.52%, #0673d8 100%); 
+    --bg-color-card: #2a2634;
+}
+
+body { 
+    background-image: url('../assets/estrelas.png');  
+    background-color: var(--bg-color);
+    background-size: auto 100%;
+    background-position: top center;
+    background-repeat: no-repeat;
+   
+}
+
+
+body * {
+    font-family: var(--font);
+    line-height: 160%;
+    color: var(--text-color);
+
+}
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    margin-top: 20px;
+}
+.container-perfil {
+    width: 120px;
+    background-image: var(--bg-color-img);
+    border-radius: 50%;
+
+    display: flex;
+    padding: 4px;
+    transition: transform .3s;
+}
+.container-perfil:hover {
+    transform: scale(1.1);
+}
+.container-perfil img{
+    width: 100%;
+    border-radius: 50%;
+}
+
+.email:hover {
+    transform: scale(1.1);
+}
+
+.email {
+    transition: transform .3s;
+    font-size: larger;
+}
+
+
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 24px; 
+}
+
+section {
+
+    background-image: var(--bg-color-img);
+    width : 350px;
+    padding-top: 4px;
+    border-radius: 10px;
+}
+
+.card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+
+    min-height: 130px;
+    text-align: center;
+
+    border-radius: 8px;
+    
+    background-color: var(--bg-color-card);
+}
+
+li {
+    display: inline;
+}
+
+ul {
+    list-style: none;
+}
+
+/*ANIMATION*/
+
+header div {
+    animation: fromTop .4s backwards;
+    animation-delay: .3s;
+}
+
+.email {
+    animation: fromTop .4s backwards;
+    animation-delay: .3s;
+}
+
+main section {
+
+    animation: fromBotton .7s backwards;
+    animation-delay: .2s;
+}
+
+main section:nth-child(1) {
+
+    animation-delay: .0s;
+}
+
+main section:nth-child(2) {
+
+    animation-delay: .3s;
+}
+
+main section:nth-child(3) {
+
+    animation-delay: .6s;
+}
+
+@keyframes fromTop {
+    from {
+        transform: translateY(-30px);
+        opacity: 0;
+
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+}
+
+@keyframes fromBotton {
+    from {
+        transform: translateY(30px);
+        opacity: 0;
+
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
